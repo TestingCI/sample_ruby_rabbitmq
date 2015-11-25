@@ -8,3 +8,10 @@ services:
   - rabbitmq
 
 archive: true
+
+matrix:
+ include:
+   - rvm: 2.1.0
+     env: CI_REPORTS=shippable/testresults COVERAGE_REPORTS=shippable/codecoverage
+ exclude:
+   - rvm: 1.9.3
